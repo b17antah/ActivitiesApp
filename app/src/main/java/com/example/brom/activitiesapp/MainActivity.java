@@ -2,6 +2,7 @@ package com.example.brom.activitiesapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
     private String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d("brom","onCreate() called.");
 
         // 1. Create a ListView as in previous assignment
         // 2. Create a new activity named "MountainDetailsActivity
@@ -33,5 +35,35 @@ public class MainActivity extends AppCompatActivity {
         // 8. From the MountainDetailsActivity you should have an option to "go back" using an
         //    left arro button. This is done by letting the MainActivity be the parent activity to
         //    MountainDetailsActivity.
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("brom","onPause() called.");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("brom","onResume() called.");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("brom","onStart() called.");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("brom","onStop() called.");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("brom","onDestroy() called.");
     }
 }
