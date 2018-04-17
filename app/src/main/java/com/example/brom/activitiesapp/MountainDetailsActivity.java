@@ -1,5 +1,6 @@
 package com.example.brom.activitiesapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,7 +18,9 @@ public class MountainDetailsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Toast.makeText(getApplicationContext(), "YO", Toast.LENGTH_LONG).show();
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("MountainName");
+        Toast.makeText(getApplicationContext(), message , Toast.LENGTH_LONG).show();
 
         //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         //fab.setOnClickListener(new View.OnClickListener() {

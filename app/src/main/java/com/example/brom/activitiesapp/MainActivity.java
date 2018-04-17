@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 Intent intent = new Intent(getApplicationContext(), MountainDetailsActivity.class);
-                intent.putExtra(mountainNames[2], message);
+                intent.putExtra("MountainName", mountainNames[position]);
                 startActivity(intent);
                // Toast.makeText(getApplicationContext(), mountainNames[position]+" is in the "+mountainLocations[position]+" category and has a height of "+Integer.toString(mountainHeights[position])+"m", Toast.LENGTH_LONG).show();
             }
