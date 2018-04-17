@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static android.R.id.message;
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
 public class MainActivity extends AppCompatActivity {
     private String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
     private String[] mountainLocations = {"Alps","Alps","Alaska"};
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 Intent intent = new Intent(getApplicationContext(), MountainDetailsActivity.class);
+                intent.putExtra(mountainNames[2], message);
                 startActivity(intent);
                // Toast.makeText(getApplicationContext(), mountainNames[position]+" is in the "+mountainLocations[position]+" category and has a height of "+Integer.toString(mountainHeights[position])+"m", Toast.LENGTH_LONG).show();
             }
