@@ -1,5 +1,6 @@
 package com.example.brom.activitiesapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         List<String> MountainList = new ArrayList<String>(Arrays.asList(mountainNames));
 
-        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(),R.layout.list_item_textview,
-                R.id.my_item_textview, MountainList);
+        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(),R.layout.content_mountain_details,
+                R.id.textForMountain, MountainList);
 
         ListView myListView = (ListView)findViewById(R.id.my_listview);
         myListView.setAdapter(adapter);
@@ -37,7 +38,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast.makeText(getApplicationContext(), mountainNames[position]+" is in the "+mountainLocations[position]+" category and has a height of "+Integer.toString(mountainHeights[position])+"m", Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(getApplicationContext(), MountainDetailsActivity.class);
+                startActivity(intent);
+               // Toast.makeText(getApplicationContext(), mountainNames[position]+" is in the "+mountainLocations[position]+" category and has a height of "+Integer.toString(mountainHeights[position])+"m", Toast.LENGTH_LONG).show();
             }
         });
 
