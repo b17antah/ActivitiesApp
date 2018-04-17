@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MountainDetailsActivity extends AppCompatActivity {
@@ -19,8 +20,11 @@ public class MountainDetailsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra("MountainName");
-        Toast.makeText(getApplicationContext(), message , Toast.LENGTH_LONG).show();
+        String MName = intent.getStringExtra("MountainName");
+        String MLocation = intent.getStringExtra("MountainLocation");
+        String MHeight = intent.getStringExtra("MountainHeight");
+
+        Toast.makeText(getApplicationContext(), MName+" "+MLocation+" "+MHeight , Toast.LENGTH_LONG).show();
 
         //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         //fab.setOnClickListener(new View.OnClickListener() {
