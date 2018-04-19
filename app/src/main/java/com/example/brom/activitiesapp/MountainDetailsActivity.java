@@ -24,7 +24,14 @@ public class MountainDetailsActivity extends AppCompatActivity {
         String MLocation = intent.getStringExtra("MountainLocation");
         String MHeight = intent.getStringExtra("MountainHeight");
 
-        Toast.makeText(getApplicationContext(), MName+" "+MLocation+" "+MHeight , Toast.LENGTH_LONG).show();
+        TextView textViewName = (TextView)findViewById(R.id.text_MountainName);
+        TextView textViewLocation = (TextView)findViewById(R.id.text_MountainLocation);
+        TextView textViewHeight = (TextView)findViewById(R.id.text_MountainHeight);
+        textViewName.setText(MName);
+        textViewLocation.setText(MLocation);
+        textViewHeight.setText(MHeight);
+
+        //Toast.makeText(getApplicationContext(), MName+" "+MLocation+" "+MHeight , Toast.LENGTH_LONG).show();
 
         //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         //fab.setOnClickListener(new View.OnClickListener() {
